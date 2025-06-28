@@ -18,7 +18,7 @@ const PostListScreen = ({ navigation }) => {
 
     const { navigate } = useNavigation();
 
-    const fetchPosts = async (currentPage) => {
+    const fetchPosts = async (currentPage) => {  
         if (!hasMore && currentPage > 1) {
             setLoading(false);
             return;
@@ -81,9 +81,9 @@ const PostListScreen = ({ navigation }) => {
                 </View>
             }
             <Text className="text-xl font-bold mb-2 text-gray-900">{item.title}</Text>
-            {item.imageUrl && (
+            {item.imageId && (
                 <Image 
-                    source={{ uri: "https://tads-2025-apps.s3.us-east-1.amazonaws.com/164b76473ae5a56af566ee9290c89bf6.jpg" }}
+                    source={{ uri: item.imageId  }}
                     className="w-full h-48 rounded-md mb-3"
                     resizeMode="cover"
                     onError={() => console.warn('Erro ao carregar imagem')}
