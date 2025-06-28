@@ -52,7 +52,7 @@ const CreatePostScreen = ({ navigation }) => {
       type, 
     });
 
-    console.warn("TESTE======");
+
     try {
       await createPost(formData);
       

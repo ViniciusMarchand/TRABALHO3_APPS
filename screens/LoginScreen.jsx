@@ -9,8 +9,6 @@ const LoginScreen = ({ navigation }) => {
   const [password, setPassword] = useState('');
   const { login } = useAuth();
 
-  console.warn(process.env.EXPO_PUBLIC_API_URL);
-
   const handleLogin = () => {
     if (email && password) {
       login(email, password);
